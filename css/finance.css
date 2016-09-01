@@ -1,0 +1,619 @@
+
+@font-face {
+	font-family:'Glyphicons Halflings';src:url(../fonts/glyphicons-halflings-regular.eot);src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(../fonts/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+}
+html{
+    font-size: 13px;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.ds-modal{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.ds-modal-rect{
+    width: 80%;
+    background-color: rgba(228, 237, 227, 0.96);
+    margin: 20% auto;
+    border-radius: 1rem;
+    border: 1px solid rgba(181, 181, 162, 0.7);
+
+}
+.ds-active {
+    background-color: #d5f6f7 !important;
+}
+.ds-red {
+    color: red;
+}
+.ds-detail-control:hover{
+    background-color: black;
+    cursor: pointer;
+}
+.ds-detail-control:active{
+    background-color: yellow;
+    color: black
+}
+.ds-green {
+    color: green;    
+    margin-left: 0.8rem;
+}
+.ds-modal-text{
+    background-color: #dee6dd;
+    width: 90%;
+    margin: 0.5rem 5%;
+    font-size: 1.2rem;
+}
+.ds-yellow-background {
+    color: rgba(228, 240, 38, 0.92);
+    background-color: #0c0c0c;
+}
+.ds-yellow {
+    color: rgba(228, 240, 38, 0.92);
+}
+.ds-center {
+    text-align: center;
+}
+.ds-disappear {
+    display: none !important;
+}
+.ds-load-input>input[type=text]{
+    width: 12rem;
+}
+input[type=password]{
+    width: 12rem;
+}
+.ds-newline {
+    margin-top: 1rem;
+    display: block;
+    text-align: center;
+}
+.ds-modal-title {
+    text-align: center;
+    font-family: '宋体';
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding: 1rem 1px;
+    background-color: rgb(23, 23, 23);
+    color: white;
+    border: 1px solid rgba(181, 181, 162, 0.7);
+    border-radius: 1rem 1rem 0 0;
+
+}
+.ds-modal-title>span {
+    color: indianred;
+}
+.ds-modal-content{
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-height: 2rem;
+    padding: 1rem;
+    color: red;
+}
+.ds-modal-button{
+    text-align: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0,0,0,.2);
+}
+a:hover{
+    color: #898;
+    cursor: pointer;
+}
+::-webkit-scrollbar
+{
+    width: 0.5rem;
+    background-color: #fff;
+    border: 1px solid #acacac;
+    border-radius: 0.2rem;
+}
+::-webkit-scrollbar-thumb
+{
+    border-radius: 0.2rem;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #008f82;
+}
+/*a{
+    color: white;.
+    text-decoration: none;
+}*/
+table>tbody>tr:not(.ds-first-tr):hover{
+    background-color: rgba(101, 154, 93, 0.96);
+    color: yellow;
+}
+.ds-control:hover {
+    background-color: yellow;
+    color: red;
+}
+.ds-control:active {
+    background-color: green;
+    color: red;
+}
+/*
+*用户登录样式
+*/
+.ds-tr-color0{
+    background: #ededed;
+}
+.ds-tr-color1{
+    background: rgba(255, 255, 255, 0.9);
+}
+.ds-load,.ds-operation,.ds-addition{
+    vertical-align: middle;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.ds-center{
+    margin: 0 auto;
+}
+.ds-load{
+    width:60%;
+    margin-left: 20%;
+    background-color: rgba(1, 76, 86, 0.85);
+}
+.ds-operation{
+    width: 90rem;
+    margin: 0 auto;
+    background-color: rgba(103, 184, 226, 0.9);
+}
+.ds-addition{
+    width:60%;
+    margin-left: 20%;
+    background-color: rgba(84, 167, 209, 0.38);
+}
+.ds-form{
+    width:98%;
+    height: auto;
+    margin-left: 1%;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    background-color: rgba(87, 161, 200, 0.4);
+}
+.ds-inline-block{
+    display: inline-block;
+}
+.ds-bottom-line {
+    border-bottom: 1px solid #d0cc68;
+
+}
+.ds-load-item{
+    margin-top:1rem;
+    padding-bottom: 2px;
+}
+.ds-load-input>input{
+    height:1.8rem;
+    border-radius: 0.2rem;
+    border: 1px solid #c1c4b8;    
+}
+.ds-load-input>input[type=date] {
+    margin-top: 0.5rem;
+}
+.ds-load-label,.ds-load-input{
+    display: inline-block;
+}
+.ds-load-label{
+    width: 8rem;
+    text-align: right;
+}
+.ds-load-label>label{
+    float:right;
+}
+.ds-load-label>label,.ds-load-input>input{
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+}
+select {
+    padding: 0.2rem 0.5rem;
+}
+.small{
+    font-size: 0.8rem !important;
+}
+.ds-load-submit{
+    -webkit-appearance: button;
+    padding: 0px 10px;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #2f2f2f;
+}
+button:hover,input[type='button']:hoveds-redr{
+    background-color: #666;
+
+}
+input[type='button']:active{
+    background-color: #333;
+    color: white;
+
+}
+.error{
+    color: #ff3d3d;
+    font-size: 1.2rem;
+}
+table{
+    border-spacing: 0;
+}
+.ds-table{
+    width: 100%;
+    border: 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(136, 153, 136, 0.18);
+}
+.ds-return-table {
+    background-color: red;
+    color: green;
+}
+.ds-order-control {
+    background-color: rgba(184, 235, 194, 0.82);
+    width: 5rem;
+    padding: 0.2rem 0.1rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    display: none;
+    position: absolute;
+    vertical-align: middle;
+    left: 3rem;
+}
+.ds-sort-active {
+    background-color: orangered !important;
+}
+.ds-sort-row {
+    padding: 0.2rem 0.3rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: #30819d; 
+}
+.ds-order-control > .ds-info-cell {
+    font-size: 0.6rem;
+    margin: 0;
+    background-color: rgba(2, 57, 26, 0.83);
+    padding: 0.1rem 0.2rem;
+    color: #ffffff;
+    border-radius: 2rem;
+}
+.ds-calc {
+    font-size: 0.5rem;
+    color: rgba(100, 100, 100, 0.6);
+    background-color: rgba(220, 220, 220, 0.85);
+}
+.ds-table>tbody>tr>td{
+    max-width: 20rem;
+    padding: 6px 3px;
+    border: 1px solid rgba(79, 214, 205, 0.3);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.ds-tr-even {
+    background-color: #8beae2;
+}
+.ds-first-tr{
+    background-color: rgba(135, 206, 235, 0.8);
+    text-shadow: 1px 1px 20px #987654;
+    cursor: pointer;
+}
+.ds-navBar{
+    margin-top: 0.5rem;
+    width:100%;
+    background-color: rgba(26, 116, 147, 0.9);
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: '微软雅黑';
+    text-shadow: .1rem 0 1.5rem #a5a4a4;
+}
+.ds-additionBar{
+    width:15%;
+    text-align: center;
+    height: 2rem;
+}
+.ds-user{
+    float: right;
+    width: 7rem;
+    padding: 0.5rem;
+    color: #fff;
+    text-align: center;
+    background-color: rgb(48, 129, 157);
+}
+.ds-nav-ul{
+    text-align: center;
+    float: left;
+    width:95%;
+    margin-left: 1rem;
+}
+.ds-nav-ul>ul{
+    list-style: none;
+    color: white;
+}
+.ds-nav-ul>ul>li{
+    float:left;
+    padding: 0.5rem;
+    text-align: center;
+}
+.ds-nav-ul>ul>li>a{
+    color: white;
+    text-decoration: none;
+}
+.ds-addition-ul{
+    width: 10%;
+    min-width: 5rem;
+    position: absolute;
+    text-align: center;    
+    background-color: rgba(25, 112, 141, 0.62);
+    padding-top:  1.5rem;
+    border-radius: 1rem 1rem 0 0;
+}
+.ds-user-operation{    
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    right: 0;
+    width: 7rem;
+    text-align: center;
+    position: fixed;
+    border-radius: 0 0 0.3rem 0.3rem;
+    display: none;
+}
+.ds-user-operation>ul {
+    padding: 0;
+}
+.ds-addition-ul>ul, .ds-user-operation>ul{
+    list-style: none;
+    color: black;
+    background-color: rgba(135, 206, 235, 0.8);
+    padding: 1rem 0;
+    border-radius: 0 0 .2rem .2rem;
+}
+.ds-addition-ul>ul>li, .ds-user-operation>ul>li{
+    width: 100%;
+    padding: 0.5rem 0;
+}
+.ds-user-operation>ul>li:hover {
+    background-color: rgba(48, 129, 157, 0.82);
+}
+.ds-addition-ul>ul>li>a, .ds-user-operation>ul>li>a{
+    color: black;
+    text-decoration: none;
+}
+.li-active{
+    background-color: #ebe5dd;
+}
+.addition-active{
+    background-color: #111;
+    border-radius: 0.2rem;
+}
+.ds-addition-ul>ul>.addition-active>a{
+    color: white;
+}
+.ds-nav-ul>ul>.li-active>a{
+    color: #111;
+}
+.ds-title{
+    margin: 1rem;
+    text-align: center;
+    font-family: '微软雅黑';
+}
+.ds-abstract-search {
+    margin-left: 10%; 
+    width: 40%;
+    display: inline-block;
+}
+.ds-analysis-search {
+    margin-left: 1rem;      
+    padding-bottom: 0.1rem;
+}
+.ds-analysis-report {
+    float: right;        
+    margin-right: 0.5rem;
+    margin-left: 0.5rem; 
+}
+.ds-report-plus {
+    cursor: pointer;
+    width: 1.6rem;
+    height: 1.6rem;
+    text-align: center;
+    line-height: 1.6rem;
+    background-color: #84c9e6;
+    border-radius: 0.6rem;
+    color: black;
+    text-shadow: 0 2px 9px rgb(102, 118, 118);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.ds-report-plus:hover {
+    background-color: #30819d;    
+}
+.ds-report-plus:active {
+    background-color: rgba(142, 255, 246, 0.93);    
+}
+.ds-detail {
+    min-width: 25rem;
+    max-width: 35rem;
+    background-color: rgba(211, 204, 194, 0.93) !important;
+}
+
+.ds-analysis-item>label:hover {
+    color: red;
+}
+.ds-scroll {
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    max-height: 40rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.19)
+}
+.ds-analysis-item>label:active {
+    color: green;
+}
+.ds-analysis-detail {
+    margin-top: 0.2rem;
+    text-align: right;
+}
+.ds-analysis{
+    overflow-y: scroll;
+    max-height: 40rem;
+    line-height: 1.5rem;
+    background-color: rgba(142, 255, 246, 0.93);
+    border-top: 0.2px solid rgba(142, 255, 246, 0.63);
+    border-bottom: 0.2px solid rgba(142, 255, 246, 0.63);
+    margin-top: 0.6rem;
+}
+.ds-detail-row1 {
+    display: inline-block;
+}
+.ds-analysis-item, .ds-detail-item{
+    padding: 0.5rem 0.2rem 0.2rem 0.3rem;
+    margin: 0.3rem 0.2rem;
+    border-bottom: 1px solid #888;   
+    background-color: #faffe8;
+    border-radius: 0.5rem;
+}
+.ds-detail-table{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.ds-analysis-item:hover{
+    background-color: rgb(125, 212, 205);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.ds-analysis-item>label{   
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 0.2rem;
+    padding: 0 0.5rem ;
+}
+.ds-info-item {
+    white-space:nowrap;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    display: inline-block;
+    font-family: '微软雅黑';
+}
+.ds-info-cell {
+    white-space:nowrap;
+    display: inline-block;;
+    margin-right: 0.5rem;
+}
+.ds-info-cell>span {
+    color: red;
+}
+input[type=checkbox] {
+	visibility: hidden;
+}
+.ds-checkbox-items {
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    max-height: 29rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 11.2rem;
+    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+    border-radius: 0.2rem 0.2rem 0 0;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: white;
+}
+.ds-checkbox-item {
+    width: 13rem;
+    padding: 0.2rem;
+    vertical-align: middle;
+    border-bottom: 2px solid #2a303f;
+}
+.ds-radio-slide {    
+    width: 10rem;
+}
+.ds-checkbox-slide {
+    width: 7rem;
+}
+.ds-radio-slide, .ds-checkbox-title {
+    display: inline-block;
+	height: 1.2rem;    
+    text-align: right;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.ds-checkbox {
+    width: 1.1rem;
+	height: 1.1rem;
+    display: inline-block;
+    margin-left: 0.2rem;
+	position: relative;
+}
+.ds-checkbox label {
+	display: block;
+	width: 0.9rem;
+	height: 0.9rem;
+	border-radius: 100%;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	transition: all .2s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 0.1rem;
+	z-index: 1;
+	background: #ffe;
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+.ds-checkbox input[type=checkbox]:checked + label {
+	background: #59f448;
+}
+.ds-checkbox input[type=radio]:checked + label {
+	background: #59f448;
+}
+.ds-checkbox-button, .ds-radio-cancel{
+    margin-top: 0.5rem;
+    background-color: rgb(217, 235, 55);
+}
+.ds-slide {
+    cursor: pointer;
+    width: auto;
+}
+.ds-slide:hover {
+   color: #59f448;
+}
+.ds-statistic {
+    width:98%;
+    margin: 0 0 1rem 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    vertical-align: bottom;
+}
+.ds-right {
+    float: right;
+}
+.ds-label-search {
+    background-color: rgba(132, 171, 144, 0.9);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+.ds-label-search:hover {
+    color: green;
+    background-color: rgba(132, 171, 144, 0.5);
+}
+.ds-label-search:active {
+    background-color: rgba(132, 171, 144, 0.8) !important;
+}
