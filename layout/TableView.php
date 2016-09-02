@@ -65,7 +65,7 @@
         $judgeByDate = 0;
         $judgeByBuyer = '';
         // $results = $Mysql -> select(['state= '],[0],['date DESC'],"orders"); 
-        $results = $Mysql -> selectBetween( ['state= '],[0], 'date DESC', 'date', $begin, $end, "orders");
+        $results = $Mysql -> selectBetween( ['state= '],[0], 'date ASC', 'date', $begin, $end, "orders");
 
         while($row = mysql_fetch_array( $results )){
             $class = 'ds-tr-color';

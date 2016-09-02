@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($firstData) {    
         $allitems         = ['buyer', 'provider', 'express', 'person', 'production'];
         $buyerNum         = ['0', '1', '2', '3', '4', '5', '6', '7', '6'];
-        $providerNum      = ['0', '1', '8', '9', '10', '11', '12', '13', '12', '14'];
-        $factoryNum       = ['15',  '16', '17', '18', '19', '20', '21', '19', '22'];
+        $providerNum      = ['0', '14', '8', '9', '10', '11', '12', '13', '12'];
+        $factoryNum       = ['22', '15',  '16', '17', '18', '19', '20', '21', '19'];
         $expressNum       = ['0', '1', '63', '2', '8', '3', '4', '64', '65', '64'];
         $personNum        = ['0', '1', '68', '2', '8', '3', '4', '5', '6', '67'];
         $productionNum    = ['0', '1', '3', '2', '8', '4', '5', '6','67'];
@@ -60,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }else {
                 array_push( $factoryPostData, $today);
             }
-            array_push( $factoryPostData, $orderData[1]);
             foreach ($factoryNum as $value3) {
                 $value3 = $flag + intval($value3);
                 array_push( $factoryPostData, $orderData[$value3]);
@@ -71,13 +70,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         orderItemPostData($ORDERS_OPERATION_EN, $orderData, 'orders', $type);
         if($type) {
-            // ViewScript( "alert('修改成功！');history.go(-1)" );
+            ViewScript( "alert('修改成功！');history.go(-1)" );
         }else {
-            // ViewScript( "alert('录入成功！');window.location ='$operationUrl'" );
+            ViewScript( "alert('录入成功！');window.location ='$operationUrl'" );
         }
         
     }else {
-        // ViewScript( "alert('日期格式不正确, 8位数字');history.go(-1)" );
+        ViewScript( "alert('日期格式不正确, 8位数字');history.go(-1)" );
     }
 }
 function orderItemPostData($obj, $data, $table, $type) {
