@@ -294,6 +294,13 @@ function OperationJsPost() {
             $(obj3).val(result.toFixed(2));})
         }
         $(document).ready(function() {
+            var dates = [13, 21, 29, 37, 45, 53, 61];
+            $('#operation0').change(function(){
+                for( var val of dates) {
+                    operationVal0 = $(this).val();
+                    $('#operation' + val).val(operationVal0); 
+                }
+            });
             var initInput  = [5, 11, 18, 26, 34, 42, 50, 58, 63, 66];
             for(var key of initInput) {
                 var text = $('input:eq('+ key +')').val(); 
