@@ -339,7 +339,10 @@ function OperationJsPost() {
             getSlideValue('#operation55', '#production');
             getSlideValue('#operation62', '#express');
             getSlideValue('#operation67', '#person');
-
+            $('input[type=text]').blur(function(){ setTimeout(()=>{ 
+                $(this).siblings('.ds-checkbox-items').hide();
+                $(this).removeAttr('keydown');
+                }, 100);});
             $('input[type=text]').not('#operation66').change(function() {
                  var countValue = 0;
                  for(var key in countInputObj ) {

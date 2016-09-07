@@ -7,13 +7,28 @@
     <link href='./css/finance.css' rel='stylesheet'>
     <script src='./js/jquery-2.1.4.js'></script>
     <script src='./js/dsmile.js'></script>
+    <style>
+    .active{
+      color: red;
+      background-color: white;
+    }
+    </style>
   </head>
 <body>
-<?php
-$test = ['测试1', '测试2', '测试3', '测试4', '测试5', ];
-foreach($test as $value) {
-    View("<h3>$value</h3>");
-}
-?>
+<input id="input_name" size="40" name="Sinput_name" type="text" />
+<div id='test' style="max-height:5rem; overflow-y:scroll;background-color: yellow">
+<div class='active'>经过长期的发展</div>
+<div >我终于明白</div>
+<div >时间终会慢慢消逝</div>
+<div >而我们只是片段</div>
+<div >经过长期的发展</div>
+<div >我终于明白</div>
+<div >时间终会慢慢消逝</div>
+<div >而我们只是片段</div>
+<div >经过长期的发展</div>
+<div >我终于明白</div>
+<div >时间终会慢慢消逝</div>
+<div >而我们只是片段</div>
+</div>
 </body>
 </html>
