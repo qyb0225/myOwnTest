@@ -210,7 +210,7 @@ function tableDataProcess(data, item) {
     var moneyWhole   = 0;
     var pureWhole    = 0;
     var debtTd       = '';
-    for(var i = length-1; i>=0; i--) {
+    for(var i = 0; i < length; i++) {
         var newData      = data[i];
         var money        = newData[keys[3]];
             money        = money ? money : 0;
@@ -230,8 +230,8 @@ function tableDataProcess(data, item) {
     if(item !='person' && item !='production') {
         debtTd = '<td>'+beforeDebt.toFixed(2)+'</td>';
     }
-    var whole = '<tr class=ds-yellow-background><td>累计</td><td>-</td><td>'+moneyWhole.toFixed(2)+'</td><td>'+pureWhole.toFixed(2)+'</td>'+debtTd+'</tr>';
-    $(whole).appendTo('.ds-table');   
+   // var whole = '<tr class=ds-yellow-background><td>累计</td><td>-</td><td>'+moneyWhole.toFixed(2)+'</td><td>'+pureWhole.toFixed(2)+'</td>'+debtTd+'</tr>';
+   // $(whole).appendTo('.ds-table');   
 
     for(var key in data){    
         var tableData    = [];
@@ -259,7 +259,7 @@ function tableDataProcess(data, item) {
             stateClass = 'class = ds-red ';
             flag = 'class=ds-detail-control';
         }
-        var tableDetail = '<tr '+stateClass+'id='+tableData[0]+'>';;
+        var tableDetail = '<tr '+stateClass+'id='+tableData[0]+'>';
         for(var key in tableData) {
             var control = '';
             if(key == 0 || key == (detailLength - 1)) {
@@ -271,9 +271,11 @@ function tableDataProcess(data, item) {
             tableDetail = tableDetail + '<td '+control+' >'+ tableData[key] +'</td>';
         }
         $(tableDetail).appendTo('.ds-table tbody');
-        }         
-    }
-    ";
+    }  
+    var whole = '<tr class=ds-yellow-background><td>累计</td><td>-</td><td>'+moneyWhole.toFixed(2)+'</td><td>'+pureWhole.toFixed(2)+'</td>'+debtTd+'</tr>';
+    $(whole).appendTo('.ds-table');        
+}
+";
     ViewScript($analysisJs);
 }
 
