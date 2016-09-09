@@ -33,10 +33,9 @@ body{
     background-color: yellow !important;
     color: black;
     border-radius: 0.4rem;
+}.ds-bar-active {
+    background-color: #e0fff9 !important;
 }
-.ds-active-table { 
-
- }
 .ds-red {
     color: red;
 }
@@ -116,6 +115,9 @@ a:hover{
     color: #898;
     cursor: pointer;
 }
+a:active {    
+    color: #ffa;
+}
 ::-webkit-scrollbar
 {
     width: 0.5rem;
@@ -150,6 +152,11 @@ table>tbody>tr:not(.ds-first-tr):hover{
 */
 .ds-tr-color0{
     background: #ededed;
+}
+h3 {
+    /*width: 100%;*/
+    text-align: center;
+    margin: 0.8rem 0 1rem 0;
 }
 .ds-tr-color1{
     background: rgba(255, 255, 255, 0.9);
@@ -623,4 +630,44 @@ input[type=checkbox] {
 }
 .ds-label-search:active {
     background-color: rgba(132, 171, 144, 0.8) !important;
+}
+.ds-full-screen {
+    width: 100%;
+}
+.ds-slide-bar {
+    position: fixed;
+    top: 0;
+    background-color: #31ff9e;
+    width: 4rem;
+    height: 100%;
+    border-right: 0.1rem solid #65b58f;
+    box-shadow: 0.1rem -0.1rem .1rem black;
+}
+.ds-slide-content {
+    text-align: center;
+    font-size: 2rem;
+    height: 100%;
+}
+.ds-bar-head {
+   background-color: #0c7142;
+}
+.ds-bar-item, .ds-bar-head {
+    padding: 0.5rem 0;
+    width: 100%;
+}
+.ds-bar-item {
+    cursor: pointer;
+    border-bottom: 0.1rem solid #5a5f5d;
+}
+.ds-bar-item:not(:first-child):hover{
+   background-color: #abffd8;
+}
+.ds-bar-item>a {
+    text-shadow: 0.2rem 0.1rem 0.5rem black;
+}
+.ds-slide-rest {
+    margin-left: 4.1rem;
+    /*background-color: orangered;*/
+    overflow-y: auto;
+    overflow-x: hidden;
 }
