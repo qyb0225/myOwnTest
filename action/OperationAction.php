@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             orderItemPostData($$objChar, $objData, $table, $type);
         }   
         for($k=0; $k<6; $k++) {
-            $num =  $flag + intval($factoryNum[0]);
+            $num =  $flag + intval($factoryNum[1]);
             if(!$orderData[$num]) {
                 continue;
             }
