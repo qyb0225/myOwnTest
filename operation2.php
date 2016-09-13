@@ -5,13 +5,13 @@ require_once('./tool/MySqlOperation.php');
 require_once('./constant.php');
 require_once('./layout/Header.php');
 ?>
-<div class = ''>
+<div class = 'ds-look'>
     <div class = 'ds-full-screen'>
         <div class = 'ds-slide-bar'>
             <div class = 'ds-slide-content'>
                 <div class = 'ds-bar-head '></div>
-                <div class = 'ds-bar-item ds-bar-active'><a>L</a></div>
-                <div class = 'ds-bar-item'><a>A</a></div>   
+                <div class = 'ds-bar-item ds-bar-active'>L</div>
+                <div class = 'ds-bar-item'>R</div>     
             </div>
         </div>
         <div class = 'ds-slide-rest' >
@@ -44,7 +44,52 @@ require_once('./layout/Header.php');
                     <td>未处理/已处理/未通过</td>
                 </tr>
             </table>
-            
+            <div class = 'ds-slides'>
+                <div class = 'ds-card'> 
+                    <div class = 'ds-card-title'>客 户</div>
+                    <div class = 'ds-card-content'>
+                        <?php 
+                            $buyer = ['名称', '日期', '产品', '数量', '单价']; 
+                            foreach ($buyer as $key => $value) {
+                                View("<div class = 'ds-input-item'><label>".$value."：</label><input type='text' /></div>");
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class = 'ds-card'> 
+                    <div class = 'ds-card-title'>供应商</div>
+                    <div class = 'ds-card-content'>
+                        <?php 
+                            $buyer = ['名称', '日期', '产品', '数量', '单价']; 
+                            foreach ($buyer as $key => $value) {
+                                View("<div class = 'ds-input-item'><label>".$value."：</label><input type='text' /></div>");
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class = 'ds-card'> 
+                    <div class = 'ds-card-title'>加工厂一</div>
+                    <div class = 'ds-card-content'>
+                        <?php 
+                            $buyer = ['名称', '日期', '产品', '数量', '单价']; 
+                            foreach ($buyer as $key => $value) {
+                                View("<div class = 'ds-input-item'><label>".$value."：</label><input type='text' /></div>");
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class = 'ds-card'> 
+                    <div class = 'ds-card-title'>其 它</div>
+                    <div class = 'ds-card-content'>
+                        <?php 
+                            $buyer = ['物流', '金额', '税率', '负责', '备注']; 
+                            foreach ($buyer as $key => $value) {
+                                View("<div class = 'ds-input-item'><label>".$value."：</label><input type='text' /></div>");
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
