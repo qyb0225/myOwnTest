@@ -6,6 +6,7 @@ $(function() {
 
 });
 
+var selctFlag = 0;
 function enToch(en) {
     switch(en) {
         case 'buyer'      : return '客户';
@@ -91,6 +92,7 @@ function gainInputInit( obj ) {
 
 function accordChange(obj1, slide, thenFunc = ''){
     obj1.bind('input propertychange',function(){
+        selctFlag = 0;
         var text = $(this).val();
         var slideLength = slide.length;
         if(text) {
@@ -111,14 +113,18 @@ function accordChange(obj1, slide, thenFunc = ''){
         if(thenFunc) {
             thenFunc();
         }
+        obj1.siblings().children().not('.ds-disappear').first().addClass('ds-active').siblings().removeClass('ds-active');
     });
 }
 
 function getSlideValue(input, obj) {
+  addActive($(input));
   $(input).focus(function() {
+      selctFlag = 0;
       $(this).after($(obj));
       $(obj).show();
-      $(obj+ ' .ds-slide').css('display', '');
+      $(obj+ ' .ds-slide').removeClass('ds-disappear').removeClass('ds-active');
+      $(input).siblings().children().not('.ds-disappear').first().addClass('ds-active');  
   });
   $(obj+ ' .ds-slide').click(function() {
       $(this).parent().hide();
@@ -127,7 +133,19 @@ function getSlideValue(input, obj) {
   });
   accordChange($(input), $(obj+ ' .ds-slide'));
 }
-
+function addActive(input) {  
+    input.keydown(function(e){
+        if(e.keyCode == 40 || e.keyCode == 38 || e.keyCode == 39) {
+            var slides = input.siblings().children().not('.ds-disappear'); 
+            switch (e.keyCode) {
+                case 40: selctFlag < slides.length-2? selctFlag++ : null;break;
+                case 38: selctFlag > 0? selctFlag-- : null;break;
+                case 39: input.val($(slides[selctFlag]).children().text());input.siblings().hide();selctFlag = 0;$(input).removeAttr('keydown');break;
+             }
+            $(slides[selctFlag]).addClass('ds-active').siblings().removeClass('ds-active');
+        }
+     })
+}
 function findListRangeRows(begin, end, list, rowObj, notRow) {
     var rows = $(list).children().not(notRow);
     var rowsLength = rows.length; 

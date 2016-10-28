@@ -71,13 +71,13 @@ $ORDER_BUYER = [
     'order_id', 'date', 'buyer', 'production', 'number', 'sale', 'money', 'gained', 'debt'
 ];
 $ORDER_PROVIDER = [
-    'order_id', 'date', 'provider', 'production', 'number', 'sale',  'money', 'pained', 'debt', 'date_provider'
+    'order_id', 'date', 'provider', 'production', 'number', 'sale',  'money', 'pained', 'debt'
 ];
 $ORDER_EXPRESS = [
     'order_id', 'date', 'express', 'buyer', 'provider', 'production', 'number', 'money', 'pained', 'debt'
 ];
 $ORDER_FACTORY = [
-    'order_id', 'date', 'factory', 'production', 'number', 'sale', 'money', 'type', 'pained', 'debt', 'date_factory'
+    'order_id', 'date', 'factory', 'production', 'number', 'sale', 'money', 'type', 'pained', 'debt'
 ];
 $ORDER_PERSON = [
     'order_id', 'date', 'person', 'buyer', 'provider', 'production', 'number', 'sale', 'money', 'pure_gain'

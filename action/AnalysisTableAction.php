@@ -9,9 +9,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['item'])) {
     $Mysql     = new MySqlOperation("ht_finance");
     if(isset($_GET['obj'])) {
         $obj       = $_GET['obj'];
-        $results   = $Mysql -> select([$item.'= '], [$obj], ['date DESC'], $itemTable);
+        $results   = $Mysql -> select([$item.'= '], [$obj], ['date ASC'], $itemTable);
     }else {
-        $results   = $Mysql -> select([], [], ['date DESC'], $itemTable);
+        $results   = $Mysql -> select([], [], ['date ASC'], $itemTable);
     }
     if(is_resource($results)) {
         while($row = mysql_fetch_assoc($results)) {

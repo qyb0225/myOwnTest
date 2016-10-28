@@ -7,6 +7,7 @@ html{
 }
 body{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    overflow-x: hidden;
 }
 *{
     margin: 0;
@@ -20,15 +21,21 @@ body{
     background-color: rgba(0, 0, 0, 0.7);
 }
 .ds-modal-rect{
-    width: 80%;
+    max-width: 30rem;
+    min-width: 10rem;
     background-color: rgba(228, 237, 227, 0.96);
-    margin: 20% auto;
+    margin: 10% auto;
     border-radius: 1rem;
     border: 1px solid rgba(181, 181, 162, 0.7);
 
 }
 .ds-active {
-    background-color: #d5f6f7 !important;
+    background-color: yellow !important;
+    color: black;
+    border-radius: 0.4rem;
+}.ds-bar-active {
+    background-color: #94bff3 !important;
+    box-shadow: 0.1rem 0.2rem 1.2rem black;
 }
 .ds-red {
     color: red;
@@ -109,6 +116,9 @@ a:hover{
     color: #898;
     cursor: pointer;
 }
+a:active {    
+    color: #ffa;
+}
 ::-webkit-scrollbar
 {
     width: 0.5rem;
@@ -143,6 +153,11 @@ table>tbody>tr:not(.ds-first-tr):hover{
 */
 .ds-tr-color0{
     background: #ededed;
+}
+h3 {
+    /*width: 100%;*/
+    text-align: center;
+    margin: 0.8rem 0 1rem 0;
 }
 .ds-tr-color1{
     background: rgba(255, 255, 255, 0.9);
@@ -533,7 +548,7 @@ input[type=checkbox] {
 }
 .ds-checkbox-item {
     width: 13rem;
-    padding: 0.2rem;
+    padding: 0.2rem 0;
     vertical-align: middle;
     border-bottom: 2px solid #2a303f;
 }
@@ -616,4 +631,89 @@ input[type=checkbox] {
 }
 .ds-label-search:active {
     background-color: rgba(132, 171, 144, 0.8) !important;
+}
+.ds-full-screen {
+    width: 100%;
+}
+.ds-slide-bar {
+    position: fixed;
+    top: 0;
+    background-color: #ddfdee;
+    width: 4rem;
+    height: 100%;
+    box-shadow: 0.1rem -0.1rem .1rem #8e8e8e;
+}
+.ds-slide-content {
+    text-align: center;
+    font-size: 2.5rem;
+    height: 100%;
+}
+.ds-bar-head {
+   background-color: #9bf7e9;
+}
+.ds-bar-item, .ds-bar-head {
+    padding: 0.5rem 0;
+    width: 100%;
+}
+.ds-bar-item {
+    cursor: pointer;
+    border-bottom: 0.1rem solid #5a5f5d;
+}
+.ds-bar-item:not(:first-child):hover{
+   background-color: #abffd8;
+    box-shadow: 0.1rem 0.2rem 1.2rem black;
+}
+.ds-bar-item>a {
+    text-shadow: 0.2rem 0.1rem 0.5rem black;
+}
+.ds-slide-rest {
+    margin-left: 5rem;
+    /*background-color: orangered;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.ds-card {
+    width: 30rem;
+    padding: 0.2rem 0.1rem;
+    /*background-color: coral;*/
+}
+.ds-card-title {
+    background-color: chartreuse;
+    font-size: 1.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0 ;
+}
+.ds-card-content {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.2rem;
+    background-color: #ff9312;
+}
+.ds-input-item {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+.ds-input-item>label {
+    font-weight: 500;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+.ds-input-item>input {
+    width: 22rem;
+    height: 1.5rem;
+    outline:none;
+    border: 1px solid #dce4ec;
+    box-shadow: none;
+    border-color: #2ecc71;
+    text-indent: 1px;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0;
+}
+.ds-slides {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.ds-slides > .ds-card {
+    display: inline-block;
 }
