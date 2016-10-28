@@ -8,14 +8,14 @@ function OperationView($orderId) {
 function OperationItem($orderId) {
     global $ORDERS_OPERATION_CH;
     global $ORDERS_OPERATION_EN;
-    $action = './action/OperationAction.php';
+    $action = './action/Operation2Action.php';
     if($orderId) {
         $mysql = new MysqlOperation("ht_finance");
         $inputValue = [];
         $results = $mysql -> select(['order_id= '], [$orderId], [],"orders");
         if(is_resource($results)) {
             $inputValue = mysql_fetch_array( $results );
-            $action = './action/OperationAction.php?orderId='.$orderId;
+            $action = './action/Operation2Action.php?orderId='.$orderId;
         }       
     }   
     $result = "<div><form class='ds-operation' action='$action' method='POST'>";
